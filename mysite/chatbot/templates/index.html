@@ -12,13 +12,17 @@
             padding: 0;
             background: linear-gradient(to bottom, #4c9baf, #d92bbf);
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
         }
         .container {
             background-color: #f4f4f4;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 70%;
+            width: 50%;
         }
         h1, h2 {
             color: #333;
@@ -51,8 +55,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            padding-top: 6rem;
+            width: 80%;
+            
         }
         input[type="submit"] {
             background-color: #4caf50;
@@ -78,16 +82,16 @@
 <body>
     <div class="box" >
         <div class="container">
-            <h1>Metro ChatBot Ahmedabad, Gujarat</h1>
-            <h2>Please ask your Question: </h2>
+            <h2>Metro ChatBot Ahmedabad, Gujarat</h2>
+            <h3 style="color: #10343d;">Please ask your Question: </h3>
             <form method="post" action="{% url 'chatbot:process_input' %}">
                 {% csrf_token %}
-                <label for="data">Input:</label>
+                <label for="data">Query :</label>
                 <input type="text" name="data" id="data">
                 
-                <label for="language">Language:</label>
+                <label for="language">Language :</label>
                 <select name="language" id="language">
-                    <option value="">Choose Option</option>
+                    <!-- <option value="">Choose Option</option> -->
                     <option value="english">English</option>
                     <option value="hinglish">Hinglish</option>
                     <option value="neural">Neural Model</option>
@@ -96,10 +100,32 @@
 
                 <input type="submit" value="Submit">
             </form>
+
+            <style>
+                .result {
+                    margin-top: 20px;
+                    background-color: #b3e3b6;
+                    padding: 1rem;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    word-wrap: normal;
+                    overflow: inherit;  
+                    animation: typeWriter 1s steps(20, end);
+                
+                }
+                @keyframes typeWriter {
+                    from {
+                        width: 0;
+                    }
+                    to {
+                        width: 100%;
+                    }
+                }
+            </style>
             
             {% if result %}
-            <h2>Result:</h2>
-            <p>{{ result }}</p>
+            <h4 style="color: #555;">Response :</h4>
+            <p class="result" style="background-color: #b3e3b6; padding: 1rem; font-weight: bold; border-radius: 10px;">{{ result }}</p>
             {% endif %}
         </div>
     </div>

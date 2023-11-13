@@ -1,9 +1,9 @@
 from django.shortcuts import render , redirect
 from .English_Main import get_responsebot as english_response 
 from .Hinglish_Main import get_response  as hinglish_response
-from .chat import chatbot_response as Neural_response
-# Create your views here.
+from .Neural_Main import chatbot_response as Neural_response
 
+# Create your views here.
 def process_input(request):
     result = None
 
@@ -22,7 +22,4 @@ def process_input(request):
         if model == 'neural':
             result = Neural_response(user_input)
         
-        # result = get_responsebot(user_input)
-        # Redirect to the same view without POST data
-        # return redirect('chatbot:process_input')
     return render(request, 'index.html', {'result': result})
