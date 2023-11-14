@@ -127,6 +127,18 @@
             <h4 style="color: #555;">Response :</h4>
             <p class="result" style="background-color: #b3e3b6; padding: 1rem; font-weight: bold; border-radius: 10px;">{{ result }}</p>
             {% endif %}
+
+
+            {% if similarityscore %}
+            <div class="similarity">
+                <h4 style="color: #555;">Top Entity Similarities :</h4>
+                {% for similarity in similarityscore %}
+                    <p>{{ similarity }}</p>
+                 
+                {% endfor %}
+            </div>
+            {% endif %}
+
         </div>
     </div>
 
