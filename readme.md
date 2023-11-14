@@ -39,14 +39,14 @@ This project implements a chatbot for Ahmedabad Metro System using Natural Langu
     Make sure you have Python installed on your system. if not, you can download it from the offical Python Website
 
 2. **Clone Repository**
-    Clone this repository to your local machine using the following command:
+     to your local machine using the following command:
     `git clone https://github.com/Nikunj-Khinchi/MetroChatBot.git`
 
 3. **Install Dependencies:**
     Ensure you have the necessary dependencies installed. You can use the provided `requirements.txt` file. `pip install -r requirements.txt`
 
 4. **Navigate**
-    Navigate to the project directory
+     to the project directory
     `cd mysite`
 
 5. **Start Application**
