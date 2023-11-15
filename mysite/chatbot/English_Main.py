@@ -9,7 +9,7 @@ from django.conf import settings
 # file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
 
 
-with open('C:/Users/Lenovo/Desktop/Dek-Work/NLP/METRO_DJANGO/MetrochatBot/mysite/chatbot/NeuralModel/data.json', 'r') as f:
+with open('C:\\Users\\swast\\Desktop\\sem5\\NLP\\MetroChatBot\\mysite\\chatbot\\NeuralModel\\data.json', 'r') as f:
         intents = json.load(f)
 # else:
 #     print(f"The file {file_path} does not exist.")
@@ -27,7 +27,9 @@ def get_similarity_score(input_words, pattern_words):
         return 0.0  # Return 0 if either list is empty
 
     common_words = set(input_words) & set(pattern_words)
-    similarity = len(common_words) / max(len(input_words), len(pattern_words))
+    # similarity = len(common_words) / max(len(input_words), len(pattern_words))
+    similarity = len(common_words) / (len(input_words)+len(pattern_words)-len(common_words))
+
     return similarity
 
 # Function to get a response
@@ -61,7 +63,9 @@ def get_responsebot(user_input):
     # Iterate through the intents and patterns
     for intent in intents['intents']:
         for pattern in intent['patterns']:
+            print(pattern)
             pattern_words = preprocess_input(pattern)
+            print(pattern_words)
             similarity_score = get_similarity_score(user_input, pattern_words)
             similarity_scores.append((similarity_score, intent))
 
@@ -86,7 +90,7 @@ def get_responsebot(user_input):
 
     print(unique_top_5_similarity)
     # Choose the best match from the sorted list
-    if similarity_scores and similarity_scores[0][0] >= 0.5:  # Adjust the similarity threshold as needed
+    if similarity_scores and similarity_scores[0][0] >= 0.3:  # Adjust the similarity threshold as needed
         best_match_score, best_match_intent = similarity_scores[0]
     # if unique_top_5_similarity and unique_top_5_similarity[0][0] >= 0.5:  # Adjust the similarity threshold as needed
     #     best_match_score, best_match_intent = similarity_scores[0]
