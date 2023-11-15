@@ -10,10 +10,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_model():
     # file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
-    with open('C:/Users/Lenovo/Desktop/Dek-Work/NLP/METRO_DJANGO/MetrochatBot/mysite/chatbot/NeuralModel/data.json', 'r') as json_data:
+    with open('C:\\Users\\swast\\Desktop\\sem5\\NLP\\MetroChatBot\\mysite\\chatbot\\NeuralModel\\data.json', 'r') as json_data:
         intents = json.load(json_data)
 
-    FILE = "C:/Users/Lenovo/Desktop/Dek-Work/NLP/METRO_DJANGO/MetrochatBot/mysite/chatbot/NeuralModel/data.pth"
+    FILE = "C:\\Users\\swast\\Desktop\\sem5\\NLP\\MetroChatBot\\mysite\\chatbot\\NeuralModel\\data.pth"
     data = torch.load(FILE)
 
     input_size = data["input_size"]
