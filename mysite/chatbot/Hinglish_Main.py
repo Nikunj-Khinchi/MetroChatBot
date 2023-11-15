@@ -84,7 +84,7 @@ def get_response(user_input):
             if len(printed_intents) == 5:
                 break
 
-    if similarity_scores and similarity_scores[0][0] >= 0.1:  # Adjust the similarity threshold as needed
+    if similarity_scores and similarity_scores[0][0] >= 0.3:  # Adjust the similarity threshold as needed
         best_match_score, best_match_intent = similarity_scores[0]
 
     if best_match_intent:
