@@ -32,7 +32,7 @@ for intent in intents['intents']:
         xy.append((w, tag))
 
 # stem and lower each word
-ignore_words = ['?', '.', '!']
+ignore_words = ['?', '.', '!' , ',']
 all_words = [stem(w) for w in all_words if w not in ignore_words]
 # remove duplicates and sort
 all_words = sorted(set(all_words))
@@ -50,10 +50,13 @@ for (pattern_sentence, tag) in xy:
     X_train.append(bag)
     # y: PyTorch CrossEntropyLoss needs only class labels, not one-hot
     label = tags.index(tag)
-    y_train.append(label)
+    # print(label)
+    y_train.append(label) # CrossEntropyLoss
+   
 
 X_train = np.array(X_train)
 y_train = np.array(y_train)
+
 
 # Hyper-parameters 
 num_epochs = 2000
@@ -83,7 +86,7 @@ dataset = ChatDataset()
 train_loader = DataLoader(dataset=dataset,
                           batch_size=batch_size,
                           shuffle=True,
-                          num_workers=0)
+                          num_workers=2)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -129,3 +132,4 @@ FILE = "data.pth"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
+  

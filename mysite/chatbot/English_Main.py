@@ -97,7 +97,7 @@ def get_responsebot(user_input):
         # print(responses)
         chosen_response = random.choice(responses)  # Select a random response from the available responses
     else:
-        chosen_response = "I'm sorry, I don't understand that."
+        chosen_response = "I am sorry, I do not understand that."
 
     return unique_top_5_similarity, chosen_response
 
