@@ -27,8 +27,8 @@ def get_similarity_score(input_words, pattern_words):
         return 0.0  # Return 0 if either list is empty
 
     common_words = set(input_words) & set(pattern_words)
-    similarity = len(common_words) / max(len(input_words), len(pattern_words))
-    # similarity = len(common_words) / (len(input_words)+len(pattern_words)-len(common_words))
+    # similarity = len(common_words) / max(len(input_words), len(pattern_words))
+    similarity = len(common_words) / (len(input_words)+len(pattern_words)-len(common_words))
 
     return similarity
 
