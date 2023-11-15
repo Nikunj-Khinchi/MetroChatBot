@@ -6,10 +6,10 @@ from .English_Preprocessing.stemming import stemming
 from  .English_Preprocessing.removalStopWords import removal_of_stop_words
 from django.conf import settings
 
-# file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
+file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
 
 
-with open('C:\\Users\\swast\\Desktop\\sem5\\NLP\\MetroChatBot\\mysite\\chatbot\\NeuralModel\\data.json', 'r') as f:
+with open(file_path, 'r') as f:
         intents = json.load(f)
 # else:
 #     print(f"The file {file_path} does not exist.")

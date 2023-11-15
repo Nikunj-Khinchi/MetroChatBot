@@ -9,11 +9,11 @@ from .NeuralModel.nltk_utils import bag_of_words, tokenize
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_model():
-    # file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
-    with open('C:\\Users\\swast\\Desktop\\sem5\\NLP\\MetroChatBot\\mysite\\chatbot\\NeuralModel\\data.json', 'r') as json_data:
+    file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
+    with open(file_path, 'r') as json_data:
         intents = json.load(json_data)
 
-    FILE = "C:\\Users\\swast\\Desktop\\sem5\\NLP\\MetroChatBot\\mysite\\chatbot\\NeuralModel\\data.pth"
+    FILE = os.path.join(settings.BASE_DIR, 'chatbot/NeuralModel/data.pth')
     data = torch.load(FILE)
 
     input_size = data["input_size"]

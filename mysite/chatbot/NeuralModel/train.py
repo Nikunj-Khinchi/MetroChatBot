@@ -11,8 +11,9 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
+file_path = os.path.join(settings.BASE_DIR, 'chatbot/English_model/data.json')
 
-with open("C:/Users/Lenovo/Desktop/Dek-Work/NLP/METRO_DJANGO/MetrochatBot/mysite/chatbot/NeuralModel/data.json", 'r') as f:
+with open(file_path, 'r') as f:
     intents = json.load(f)
 
 all_words = []
