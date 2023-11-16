@@ -8,6 +8,7 @@ from django.conf import settings
 
 
 file_path = os.path.join(settings.BASE_DIR, 'chatbot/Hinglish_model/DataHinglish.json')
+locations = ["Thaltej", "Gam", "Thaltej", "Doordarshan Kendra","Gurukul", "Road","Gujarat", "University" ,"Commerce", "Six", "Road","SP", "Stadium","Old", "High", "Court","Shahpur","Gheekanta","Kalupur", "Station","Kankaria", "East","Apparel", "Park","Amraiwadi","Rabari", "Colony","Vastral","nirant", "Cross", "Road","Vastral", "Gam"]
 
 # Load your Hinglish intents data from the JSON file
 with open(file_path, 'r', encoding='utf-8') as f:
@@ -53,10 +54,14 @@ def get_similarity_score(input_words, pattern_words):
 
     return "I'm sorry, I don't understand that."
 
-
 def get_response(user_input):
+    NER = set()
     user_input = preprocess_input(user_input)
-
+    for words in user_input:
+        for location in locations:
+            if words == location.lower():
+                NER.add(location.lower())
+    print("Named Entity Recognized Words: ",NER)
     similarity_scores = [] 
     
     best_match_intent = None

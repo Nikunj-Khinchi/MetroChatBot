@@ -5503,7 +5503,7 @@
       "patterns": [
         "What is the maximum time for exiting the GMRC Network from the same station?",
         "What is maximum time for exiting from same station?",
-        "What is maximum time allowed to exit from same staion?",
+        "What is maximum time allowed to exit from same station?",
         "Is there a different maximum time for exiting the GMRC Network when you exit from a different station?",
         "What is maximum time allowed to exit from diiferent staion?",
         "Is there a different maximum time for exiting from a different station?",
@@ -5601,7 +5601,7 @@
         "When does Passenger service ends in ahmedabad metro?"
       ],
       "responses": [
-        "Last passenger service time from VastralGam is at 22:05 Hrs and\nLast passenger service time from Thaltej is at 22:05 Hrs.",
+        "Last passenger service time from VastralGam is at 22:05 Hrs and \n Last passenger service time from Thaltej is at 22:05 Hrs.",
         "First passenger train starts at VastralGam and Thaltej at 22:05 Hrs."
       ]
     },
