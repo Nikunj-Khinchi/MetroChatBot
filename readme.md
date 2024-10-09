@@ -1,11 +1,5 @@
 # Ahmedabad Metro ChatBot
 
-### Group 13
-
-- Abhishek Bhagat S20210010005
-- Nikunj Khinchi  S20210010159
-- Swastik Mukati  S20210010221
-
 ### Overview
 This project implements a chatbot for Ahmedabad Metro System using Natural Language Processing (NLP), The chatbot is designed to provide information and answer user queries related to the Ahmedabad Metro.
 
